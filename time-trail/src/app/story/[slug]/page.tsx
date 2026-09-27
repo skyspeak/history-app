@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { EmptyState } from "@/components/empty-state";
 import { StoryReader } from "@/components/story-reader";
 import { getStory, stories } from "@/data/content";
 
@@ -13,7 +13,17 @@ export default async function StoryPage({
 }) {
   const { slug } = await params;
   const story = getStory(slug);
-  if (!story) notFound();
+
+  if (!story) {
+    return (
+      <EmptyState
+        title="Story not on the shelf"
+        message="That story slug is not in our curated collection yet."
+        actionHref="/"
+        actionLabel="Browse stories"
+      />
+    );
+  }
 
   return (
     <div className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 sm:py-12">
