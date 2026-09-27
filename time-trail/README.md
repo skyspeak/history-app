@@ -12,7 +12,7 @@ npm install
 npm run dev
 ```
 
-Then open [http://127.0.0.1:43127](http://127.0.0.1:43127).
+Dev server binds `0.0.0.0:43127` (webpack). Open [http://127.0.0.1:43127](http://127.0.0.1:43127).
 
 Other scripts:
 
