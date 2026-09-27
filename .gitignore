@@ -1,0 +1,16 @@
+# --- added by cleanup 2026-09-09 ---
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+__pycache__/
+*.pyc
+.DS_Store
+.vite/
+
+# Unrelated local portal files (not part of Time Trail)
+/index.html
+/launch-os/
+/phonics-plan.html
+/phonics-plan.pdf
