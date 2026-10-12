@@ -11,25 +11,25 @@ export function StoryReader({ story }: { story: Story }) {
   const era = getEra(story.eraId);
 
   return (
-    <article className="mx-auto max-w-3xl space-y-8">
+    <article className="mx-auto max-w-3xl space-y-6 sm:space-y-8">
       <Link
         href="/timeline"
         className={cn(
           buttonVariants({ variant: "ghost", size: "lg" }),
-          "min-h-11 -ml-2 rounded-xl px-3 text-base text-[color:var(--trail-ink)]"
+          "min-h-11 -ml-2 touch-manipulation rounded-xl px-3 text-base text-[color:var(--trail-ink)]"
         )}
       >
         <ArrowLeft className="size-5" aria-hidden />
         Timeline
       </Link>
 
-      <header className="overflow-hidden rounded-3xl text-white shadow-[0_20px_50px_-28px_rgba(20,40,30,0.55)] animate-in fade-in zoom-in-95 duration-500">
+      <header className="overflow-hidden rounded-2xl text-white shadow-[0_20px_50px_-28px_rgba(20,40,30,0.55)] animate-in fade-in zoom-in-95 duration-500 sm:rounded-3xl">
         <div
-          className="relative min-h-[240px] px-6 py-10 sm:min-h-[300px] sm:px-10 sm:py-14"
+          className="relative min-h-[200px] px-5 py-8 sm:min-h-[300px] sm:px-10 sm:py-14"
           style={{ background: story.heroGradient }}
         >
           <div className="pointer-events-none absolute inset-0 opacity-30 trail-dots" aria-hidden />
-          <div className="relative max-w-xl space-y-4">
+          <div className="relative max-w-xl space-y-3 sm:space-y-4">
             <div className="flex flex-wrap gap-2">
               <Badge className="border-0 bg-black/25 text-white backdrop-blur-sm">
                 {era.name}
@@ -38,18 +38,18 @@ export function StoryReader({ story }: { story: Story }) {
                 {story.yearLabel}
               </Badge>
             </div>
-            <p className="text-5xl opacity-90" aria-hidden>
+            <p className="text-4xl opacity-90 sm:text-5xl" aria-hidden>
               {story.icon}
             </p>
-            <h1 className="font-[family-name:var(--font-display)] text-4xl leading-tight sm:text-5xl">
+            <h1 className="font-[family-name:var(--font-display)] text-3xl leading-tight sm:text-5xl">
               {story.title}
             </h1>
-            <p className="text-lg text-white/90">{story.blurb}</p>
+            <p className="text-base text-white/90 sm:text-lg">{story.blurb}</p>
           </div>
         </div>
       </header>
 
-      <div className="space-y-5 text-lg leading-relaxed text-[color:var(--trail-ink)]/90">
+      <div className="space-y-4 text-base leading-relaxed text-[color:var(--trail-ink)]/90 sm:space-y-5 sm:text-lg">
         {story.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}

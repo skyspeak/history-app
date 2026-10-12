@@ -92,6 +92,10 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+  }
   body {
     @apply bg-background text-foreground;
     background-image:
@@ -100,8 +104,10 @@
       linear-gradient(180deg, #e8f3ef 0%, #f4faf7 45%, #eef6f1 100%);
     background-attachment: fixed;
   }
-  html {
-    @apply font-sans;
+  @media (max-width: 640px) {
+    body {
+      background-attachment: scroll;
+    }
   }
 }
 

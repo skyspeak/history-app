@@ -65,15 +65,19 @@ export function StoryQuiz({ story }: { story: Story }) {
           You got {score} out of {total} questions right.
         </p>
         <Progress value={100} className="mt-4 h-3" />
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Button size="lg" className="min-h-12 rounded-xl px-6 text-base" onClick={restart}>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button
+            size="lg"
+            className="min-h-12 w-full rounded-xl px-6 text-base sm:w-auto"
+            onClick={restart}
+          >
             Try quiz again
           </Button>
           <Link
             href="/timeline"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "min-h-12 rounded-xl px-6 text-base"
+              "min-h-12 w-full justify-center rounded-xl px-6 text-base sm:w-auto"
             )}
           >
             Back to timeline
@@ -82,7 +86,7 @@ export function StoryQuiz({ story }: { story: Story }) {
             href="/"
             className={cn(
               buttonVariants({ variant: "secondary", size: "lg" }),
-              "min-h-12 rounded-xl px-6 text-base"
+              "min-h-12 w-full justify-center rounded-xl px-6 text-base sm:w-auto"
             )}
           >
             More stories
@@ -99,25 +103,25 @@ export function StoryQuiz({ story }: { story: Story }) {
       aria-labelledby="quiz-heading"
       className="rounded-2xl border border-[color:var(--trail-ink)]/10 bg-white/85 p-5 sm:p-6"
     >
-      <div className="flex items-end justify-between gap-3">
-        <div>
+      <div className="flex flex-wrap items-end justify-between gap-2">
+        <div className="min-w-0">
           <p className="text-sm font-bold uppercase tracking-wide text-[color:var(--trail-moss)]">
             Quick quiz
           </p>
           <h2
             id="quiz-heading"
-            className="font-[family-name:var(--font-display)] text-2xl text-[color:var(--trail-ink)] sm:text-3xl"
+            className="font-[family-name:var(--font-display)] text-xl text-[color:var(--trail-ink)] sm:text-3xl"
           >
             Question {index + 1} of {total}
           </h2>
         </div>
-        <p className="text-sm font-semibold text-[color:var(--trail-ink)]/60">
+        <p className="shrink-0 text-sm font-semibold text-[color:var(--trail-ink)]/60">
           Score {score}
         </p>
       </div>
       <Progress value={progress} className="mt-4 h-3" />
 
-      <p className="mt-5 text-xl font-semibold leading-snug text-[color:var(--trail-ink)]">
+      <p className="mt-5 text-lg font-semibold leading-snug text-[color:var(--trail-ink)] sm:text-xl">
         {question.question}
       </p>
 
@@ -133,10 +137,11 @@ export function StoryQuiz({ story }: { story: Story }) {
             <li key={choice}>
               <button
                 type="button"
+                data-quiz-choice={choiceIndex}
                 onClick={() => choose(choiceIndex)}
                 disabled={selected !== null}
                 className={cn(
-                  "flex w-full min-h-14 items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left text-lg font-medium transition",
+                  "flex w-full min-h-14 touch-manipulation items-center justify-between gap-3 rounded-xl border px-3 py-3 text-left text-base font-medium transition sm:px-4 sm:text-lg",
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--trail-sun)]",
                   selected === null &&
                     "border-[color:var(--trail-ink)]/15 bg-[color:var(--trail-sky)]/40 hover:border-[color:var(--trail-moss)] hover:bg-[color:var(--trail-moss)]/10",
@@ -150,7 +155,7 @@ export function StoryQuiz({ story }: { story: Story }) {
                     "border-[color:var(--trail-ink)]/10 bg-white/50 opacity-70"
                 )}
               >
-                <span>{choice}</span>
+                <span className="min-w-0 break-words">{choice}</span>
                 {revealCorrect ? (
                   <CheckCircle2 className="size-6 shrink-0 text-[color:var(--trail-moss)]" />
                 ) : null}
@@ -178,7 +183,8 @@ export function StoryQuiz({ story }: { story: Story }) {
           </p>
           <Button
             size="lg"
-            className="min-h-12 rounded-xl px-6 text-base"
+            data-quiz-next
+            className="min-h-12 w-full touch-manipulation rounded-xl px-6 text-base sm:w-auto"
             onClick={next}
           >
             {index + 1 >= total ? "See my score" : "Next question"}

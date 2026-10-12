@@ -7,11 +7,11 @@ export function EraTimeline() {
       <div className="max-w-2xl">
         <h1
           id="timeline-heading"
-          className="font-[family-name:var(--font-display)] text-4xl text-[color:var(--trail-ink)] sm:text-5xl"
+          className="font-[family-name:var(--font-display)] text-3xl text-[color:var(--trail-ink)] sm:text-5xl"
         >
           Era timeline
         </h1>
-        <p className="mt-3 text-lg text-[color:var(--trail-ink)]/70">
+        <p className="mt-3 text-base text-[color:var(--trail-ink)]/70 sm:text-lg">
           Walk the trail from ancient cities to the Moon. Tap any stop to read.
         </p>
       </div>
@@ -63,7 +63,7 @@ export function EraTimeline() {
                         <li key={story.slug}>
                           <Link
                             href={`/story/${story.slug}`}
-                            className="flex min-h-16 items-center gap-3 rounded-xl border border-[color:var(--trail-ink)]/10 bg-white/80 px-4 py-3 text-left transition hover:-translate-y-0.5 hover:border-[color:var(--trail-moss)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--trail-sun)]"
+                            className="flex min-h-14 touch-manipulation items-center gap-3 rounded-xl border border-[color:var(--trail-ink)]/10 bg-white/80 px-3 py-3 text-left transition hover:-translate-y-0.5 hover:border-[color:var(--trail-moss)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--trail-sun)] sm:min-h-16 sm:px-4"
                           >
                             <span
                               className="flex size-11 shrink-0 items-center justify-center rounded-xl text-xl text-white"

@@ -9,19 +9,23 @@ Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**. All
 ```bash
 cd time-trail
 npm install
-npm run dev
+npm run build
+npm run start
 ```
 
-Dev server binds `0.0.0.0:43127` (webpack). Open [http://127.0.0.1:43127](http://127.0.0.1:43127).
+Server binds `0.0.0.0:43127`. Open [http://127.0.0.1:43127](http://127.0.0.1:43127).
 
-Other scripts:
+For hot reload during development:
 
 ```bash
-npm run build
-npm run start   # production server on port 43127
-npm run lint
+npm run dev     # webpack on 0.0.0.0:43127
 ```
 
+If quiz clicks stop responding in `npm run dev`, restart the process or use `npm run start` after a build (broken HMR can leave client components unhydrated).
+
+```bash
+npm run lint
+```
 ## What’s inside
 
 - **Discover** — horizontal shelf of stories on mobile; grid on desktop

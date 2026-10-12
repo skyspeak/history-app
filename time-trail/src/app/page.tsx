@@ -12,23 +12,23 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 trail-hero" aria-hidden />
         <div className="absolute inset-0 trail-dots opacity-40" aria-hidden />
-        <div className="relative mx-auto flex min-h-[72vh] max-w-6xl flex-col justify-end px-4 pb-14 pt-16 sm:min-h-[78vh] sm:px-6 sm:pb-20">
-          <div className="max-w-2xl space-y-5 animate-in fade-in slide-in-from-bottom-3 duration-700">
-            <p className="font-[family-name:var(--font-display)] text-5xl leading-none tracking-tight text-white drop-shadow sm:text-7xl">
+        <div className="relative mx-auto flex min-h-[min(72vh,640px)] max-w-6xl flex-col justify-end px-4 pb-12 pt-12 sm:min-h-[78vh] sm:px-6 sm:pb-20 sm:pt-16">
+          <div className="max-w-2xl space-y-4 animate-in fade-in slide-in-from-bottom-3 duration-700 sm:space-y-5">
+            <p className="font-[family-name:var(--font-display)] text-4xl leading-none tracking-tight text-white drop-shadow sm:text-7xl">
               Time Trail
             </p>
-            <h1 className="max-w-xl text-2xl font-semibold leading-snug text-white/95 sm:text-3xl">
+            <h1 className="max-w-xl text-xl font-semibold leading-snug text-white/95 sm:text-3xl">
               Walk through history one short story at a time.
             </h1>
-            <p className="max-w-lg text-lg text-white/85">
+            <p className="max-w-lg text-base text-white/85 sm:text-lg">
               Made for kids ages 7–12. Big buttons. Real history. Tiny quizzes.
             </p>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex w-full flex-col gap-3 pt-1 sm:w-auto sm:flex-row sm:flex-wrap sm:pt-2">
               <Link
                 href="#shelf"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "min-h-12 rounded-xl bg-[color:var(--trail-sun)] px-6 text-base font-bold text-[color:var(--trail-ink)] hover:bg-[color:var(--trail-sun)]/90"
+                  "min-h-12 w-full justify-center rounded-xl bg-[color:var(--trail-sun)] px-6 text-base font-bold text-[color:var(--trail-ink)] hover:bg-[color:var(--trail-sun)]/90 sm:w-auto"
                 )}
               >
                 Start exploring
@@ -37,7 +37,7 @@ export default function HomePage() {
                 href="/timeline"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "min-h-12 rounded-xl border-white/40 bg-white/15 px-6 text-base font-bold text-white backdrop-blur-sm hover:bg-white/25 hover:text-white"
+                  "min-h-12 w-full justify-center rounded-xl border-white/40 bg-white/15 px-6 text-base font-bold text-white backdrop-blur-sm hover:bg-white/25 hover:text-white sm:w-auto"
                 )}
               >
                 See the timeline

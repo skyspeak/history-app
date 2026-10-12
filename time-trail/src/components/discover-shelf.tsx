@@ -30,19 +30,19 @@ export function DiscoverShelf({
       </div>
 
       <div className="relative">
-        <ul className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
+        <ul className="-mx-1 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] touch-pan-x md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
           {stories.map((story, index) => {
             const era = getEra(story.eraId);
             return (
               <li
                 key={story.slug}
-                className="w-[85%] shrink-0 snap-start sm:w-[70%] md:w-auto animate-in fade-in slide-in-from-bottom-2 duration-500"
+                className="w-[min(85%,20rem)] shrink-0 snap-start sm:w-[70%] md:w-auto animate-in fade-in slide-in-from-bottom-2 duration-500"
                 style={{ animationDelay: `${index * 70}ms`, animationFillMode: "both" }}
               >
                 <Link
                   href={`/story/${story.slug}`}
                   className={cn(
-                    "group flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-[color:var(--trail-ink)]/10 bg-white/80 shadow-[0_12px_30px_-18px_rgba(28,44,34,0.45)] transition duration-300",
+                    "group flex h-full min-h-[260px] flex-col overflow-hidden rounded-2xl border border-[color:var(--trail-ink)]/10 bg-white/80 shadow-[0_12px_30px_-18px_rgba(28,44,34,0.45)] transition duration-300 sm:min-h-[280px]",
                     "hover:-translate-y-1 hover:shadow-[0_18px_36px_-16px_rgba(28,44,34,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--trail-sun)]"
                   )}
                 >
